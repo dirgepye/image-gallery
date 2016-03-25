@@ -1,0 +1,19 @@
+{
+  "name": "war-card-game",
+  "version": "0.0.1",
+  "description": "war card game",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dirgepye/war-card-game.git"
+  },
+  "author": "shawn stenhouse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dirgepye/war-card-game/issues"
+  },
+  "homepage": "https://github.com/dirgepye/war-card-game#readme"
+}
