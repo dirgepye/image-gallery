@@ -1,0 +1,182 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+html {
+  box-sizing: border-box; }
+
+body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row; }
+
+.style {
+  border: solid #bbb 3px;
+  padding: 10px;
+  width: 150px;
+  transition: background-color 0.5s; }
+
+.style:hover {
+  background-color: #445A6B;
+  cursor: pointer; }
+
+.dash {
+  display: flex;
+  justify-content: center;
+  background-color: #080A19;
+  width: 100vw;
+  height: 100vh;
+  color: #BBB; }
+  .dash .dash-content {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px; }
+
+.display {
+  background-color: #445A6B;
+  width: 0vw;
+  height: 100vh;
+  overflow: scroll; }
+
+.display-countainer {
+  width: 400px;
+  margin: auto; }
+
+.cover {
+  background-color: #080A19;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10000; }
+
+.buttons {
+  visibility: hidden; }
+
+.form-a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.form-a__basic {
+  font-family: 'PT Sans', sans-serif;
+  color: #0A2745;
+  background-color: #DED9DC;
+  border-radius: 3px;
+  padding: 10px;
+  border: 1px solid #646C75;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  width: 350px;
+  margin: 10px; }
+  .form-a__basic h4 {
+    font-size: 23px;
+    border-bottom: 1px solid #A4ADB0;
+    padding-bottom: 8px;
+    margin-bottom: 8px; }
+  .form-a__basic .blah a {
+    float: right; }
+  .form-a__basic form {
+    border-bottom: 1px solid #A4ADB0;
+    padding-bottom: 8px;
+    margin-bottom: 8px; }
+  .form-a__basic .form-a__field {
+    border: 1px solid #A4ADB0;
+    font-size: 14px;
+    margin: 6px 0px;
+    padding: 6px;
+    width: 100%; }
+  .form-a__basic .form-a__submit {
+    background-color: #16718C;
+    color: #0A2745;
+    font-size: 20px;
+    padding: 4px;
+    width: 100%;
+    border: none; }
+  .form-a__basic a {
+    text-decoration: na;
+    color: #16718C; }
+
+.form-b {
+  background-color: #ddd; }
+
+.form-b {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.form-b__basic {
+  font-family: "Share Tech Mono";
+  color: #4169E1;
+  background-color: #ECECEE;
+  border: 4px solid #4169E1;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  width: 350px;
+  margin: 10px; }
+  .form-b__basic h4 {
+    font-size: 23px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    text-align: center; }
+  .form-b__basic .blah a {
+    float: right; }
+  .form-b__basic form {
+    padding-bottom: 8px;
+    margin-bottom: 8px; }
+  .form-b__basic input[type=text], .form-b__basic .form-b--signup input[type=submit], .form-b--signup .form-b__basic input[type=submit] {
+    border: none;
+    background-color: #4169E1;
+    border-bottom: 2px solid #283198;
+    border-right: 2px solid #283198;
+    color: #ECECEE;
+    font-size: 14px;
+    margin: 6px 0px;
+    padding: 6px;
+    width: 100%;
+    transition: ease-in-out, background-color .10s ease-in-out; }
+  .form-b__basic input[type=text]:focus, .form-b__basic .form-b--signup input[type=submit]:focus, .form-b--signup .form-b__basic input[type=submit]:focus {
+    outline: none;
+    background-color: #283198; }
+  .form-b__basic input[type=submit] {
+    background-color: #ECECEE;
+    border: 4px solid #4169E1;
+    color: #4169E1;
+    font-size: 20px;
+    padding: 4px;
+    width: 100%; }
+  .form-b__basic a {
+    text-decoration: underline;
+    color: red; }
+
+.form-b--signup {
+  border: none;
+  border-bottom: 3px solid #820805;
+  border-right: 3px solid #820805;
+  background-color: #B5191D;
+  color: #ECECEE; }
+  .form-b--signup input[type=text], .form-b--signup input[type=submit] {
+    border: none;
+    background-color: #ECECEE;
+    border-bottom: 3px solid #820805;
+    border-right: 3px solid #820805;
+    color: #820805; }
+  .form-b--signup input[type=text]:focus, .form-b--signup input[type=submit]:focus {
+    outline: none;
+    background-color: #ECECEE; }
+
+/*# sourceMappingURL=style.css.map */
