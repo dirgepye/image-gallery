@@ -65,10 +65,18 @@ $dark-red: #820805;
 // gray blue: #445A6B
 
 .style {
+    @include flex;
+    justify-content: center;
+    align-items: center;
     border: solid #bbb 3px;
     padding: 10px;
     width: 150px;
+    max-height: 46px;
     transition: background-color 0.5s;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 .style:hover {
@@ -77,8 +85,9 @@ $dark-red: #820805;
 }
 
 .dash {
-    display: flex;
+    @include flex;
     justify-content: center;
+    align-items: center;
     background-color: #080A19;
     width: 100vw;
     height: 100vh;
@@ -86,21 +95,40 @@ $dark-red: #820805;
 
 
     .dash-content {
-    display: flex;
+    @include flex;
     flex-direction: column;
     width: 300px;
-    height: 400px;
+        p {
+            text-align: justify;
+            margin: 10px 0;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 10px 0;
+        }
     }
 }
 
 .display {
+    @include flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #445A6B;
     width: 0vw;
     height: 100vh;
     overflow: scroll;
+    
+    p {
+        font-size: 60px;
+        width: 600px;
+        color: #3c4e5d;
+        font-weight: 600;
+    }
 }
 
-.display-countainer {
+.display-container {
     width: 400px;
     margin: auto;
 }
@@ -115,7 +143,11 @@ $dark-red: #820805;
 }
 
 .buttons {
+    @include flex;
+    justify-content: center;
+    align-items: center;
     visibility: hidden;
+    width: 100%;
 }
 
 

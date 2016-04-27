@@ -6,7 +6,6 @@
 
 
 
-
 $(document).ready(function() {
     $(".start").click(function() {
         if ($(".dash").css("width") >= "100vw") {
@@ -15,24 +14,30 @@ $(document).ready(function() {
             });
             $(".display").animate({
                 width: "65vw"
-            });
+            })
+            //$(".display").html("<p>Please make a selection in the dashboard to your left :^)</p>");
             $(".display").promise().done(function() {
                 $(".cover").animate({
                     top: "-800px"
                 }, 800)
-                $(".style").animate({
-                    width: "200px"
-                })
+                $(".style").find("p").fadeOut()
                 $(".style").promise().done(function() {
                     $(".style").animate({
-                        height: "100px"
-                    })
-                    $(".buttons").css({
-                        "visibility": "visible"
-                    })
-                    $("div").removeClass("start");
-                });
+                        width: "0px",
+                        height: "0px",
+                        padding: "0",
+                    }),
 
+                        $(".style").fadeOut();
+                    $(".style").promise().done(function() {
+
+                        $(".buttons").css({
+                            "visibility": "visible"
+                        })
+                        $("div").removeClass("start");
+                    });
+
+                });
             });
         }
         else {
@@ -112,7 +117,7 @@ $(document).ready(function() {
         });
         $(".cover").promise().done(function() {
             $('.display').css("background-color", "blue");
-            
+
             $('.display-container').html("");
             $('.display-container').append(formHtml);
             $('.display-container:first-child').addClass('form-a__basic')
@@ -130,7 +135,7 @@ $(document).ready(function() {
         //     setTimeout(function() {
         //         $('div').removeClass('form-a__basic')
         //     }, 1000);
-            coverBlue();
+        coverBlue();
         // }
         // else {
         //     coverBlue();
@@ -159,7 +164,7 @@ $(document).ready(function() {
     });
 
     $(".black").on("click", function() {
-        
+
         $('.cover').animate({
             "top": "0px"
         });
@@ -221,7 +226,7 @@ $(document).ready(function() {
         </div>
     </div>
     </div>`
-    
+
     var formHtmlB = `
                 <div class="form-b__basic">
                 <form>

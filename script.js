@@ -99,8 +99,6 @@ while (i < 5);
 
 // console.log(card1);
 
-var testDeck = [];
-
 console.log(testDeck);
 
 

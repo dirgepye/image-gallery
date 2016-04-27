@@ -19,35 +19,74 @@ body {
   flex-direction: row; }
 
 .style {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: solid #bbb 3px;
   padding: 10px;
   width: 150px;
-  transition: background-color 0.5s; }
+  max-height: 46px;
+  transition: background-color 0.5s;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px; }
 
 .style:hover {
   background-color: #445A6B;
   cursor: pointer; }
 
 .dash {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #080A19;
   width: 100vw;
   height: 100vh;
   color: #BBB; }
   .dash .dash-content {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 400px; }
+    width: 300px; }
+    .dash .dash-content p {
+      text-align: justify;
+      margin: 10px 0; }
+    .dash .dash-content h1 {
+      text-align: center;
+      margin: 10px 0; }
 
 .display {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #445A6B;
   width: 0vw;
   height: 100vh;
   overflow: scroll; }
+  .display p {
+    font-size: 60px;
+    width: 600px;
+    color: #3c4e5d;
+    font-weight: 600; }
 
-.display-countainer {
+.display-container {
   width: 400px;
   margin: auto; }
 
@@ -59,7 +98,15 @@ body {
   z-index: 10000; }
 
 .buttons {
-  visibility: hidden; }
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  width: 100%; }
 
 .form-a {
   display: flex;
