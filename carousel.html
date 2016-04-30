@@ -1,29 +1,43 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-<body>
-    <button id="back">Back</button>
-    <button id="forward">Forward</button>
-    <div class="display">
-        <div id="img-container"></div>
-    </div>
+
+<body id="slideshow-body">
+    <h1>Illustrations and Graphic Design</h1>
+    <p>Here you'll find a mix of contract work and personal projects.</p>
+    
+    <h3>About the code</h3>
+    <p>While building a slide show is a fairly simple task thanks to libraries such as jQuery and Bootstrap, I felt that, as a new 
+    developer, it would be a challenging learning experience to build one from scratch using only Javascript (okay, and jQuery when I'm stumped)</p>
+    <p>All the images below come from a loop that pulls information from Javascript objects which contain the necessary information (src, alt, id etc.)
+    When an image is clicked, a function is called which pulls the information from the appropriate object, and then uses AJAX to insert the elements
+    into the code.</p>
+
+
+
     <div id="test-container">
-        
+
     </div>
-    <div class="image-container">
-        <div class="image">b</div>
-        <div class="image">b</div>
-        <div class="image">b</div>
-        <div class="image">b</div>
+
+    <div onClick="close(this)" id="slide-container">
+        <button class="slide-button" id="back">Back</button>
         
+        <div id="slide-img-container">
+            
+        </div>
+        <button class="slide-button" id="forward">Forward</button>
     </div>
+
     <!--<img onClick="getInfo(this)" id="0" src="image0.jpg" alt="super cool title">-->
     <!--<img onClick="getInfo(this)" id="1" src="image1.jpg" alt="extra cool title">-->
     <!--<img onClick="getInfo(this)" id="2" src="image2.jpg" alt="not so cool title">-->
-    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
     <script src="carousel.js"></script>
 </body>
+
 </html>

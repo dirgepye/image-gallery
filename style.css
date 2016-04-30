@@ -226,4 +226,96 @@ body {
     outline: none;
     background-color: #ECECEE; }
 
+#slide-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: -10000px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center; }
+  #slide-container img {
+    max-width: 400px; }
+  #slide-container .slide-button {
+    height: 20px;
+    width: 90px;
+    background-color: #cc6600;
+    border: 1px solid black;
+    color: white;
+    font-size: 15px; }
+
+#slide-img-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f2f2f;
+  padding: 40px;
+  min-height: 460px;
+  color: #fafafa; }
+
+button {
+  outline: none;
+  max-height: 40px; }
+
+#slideshow-body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+  max-width: 1020px;
+  color: #fafafa;
+  margin: auto; }
+
+#slideshow-body > * {
+  margin-top: 20px; }
+
+#test-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 810px; }
+  #test-container img {
+    padding: 10px;
+    margin: 5px;
+    background-color: #2f2f2f;
+    transition: background-color 0.5s;
+    -web-transition: background-color 0.5s; }
+  #test-container img:hover {
+    background-color: #cc6600; }
+
+#close {
+  width: 70px;
+  height: 30px;
+  text-transform: uppercase;
+  background-color: #cc6600;
+  border: 0;
+  color: #fafafa;
+  position: relative; }
+
 /*# sourceMappingURL=style.css.map */

@@ -1,121 +1,105 @@
+console.log("yqy!")
 
-    console.log("yqy!")
+
+// counter to keep track of what image should be displayed in slides how
+var counter = 0
+console.log(counter)
+
+//calling functions
+document.getElementById("back").onclick = function() {
+    back()
+}
+document.getElementById("forward").onclick = function() {
+    forward()
+}
 
 
-    // var slideimages = new Array() // create new array to preload images
-    // slideimages[0] = new Image() // create new instance of image object
-    // slideimages[0].src = "firstcar.gif" // set image object src property to an image's src, preloading that image in the process
-    // slideimages[1] = new Image()
-    // slideimages[1].src = "secondcar.gif"
-    // slideimages[2] = new Image()
-    // slideimages[2].src = "thirdcar.gif"
+//object
+function imageObj(src, id, alt, desc) {
+    this.src = src;
+    this.alt = alt;
+    this.id = id;
+    this.desc = desc;
+}
 
-    document.getElementById("back").onclick = function() {
-        back()
-    }
-    document.getElementById("forward").onclick = function() {
-        forward()
-    }
-    document.getElementsByClassName("image").onclick = function() {
-        imgSelect()
-    };
+//images to go in slide
+var slideimages = [];
+slideimages[0] = new imageObj("image0.jpg", 0, "This is an image of", "drawing of boobs");
+slideimages[1] = new imageObj("image1.jpg", 1, "This is an image of 2", "drawings of farts");
+slideimages[2] = new imageObj("image2.jpg", 2, "Wowowowow", "drawings of turds");
+slideimages[3] = new imageObj("image1.jpg", 3, "fdsaha", "faewahe");
+slideimages[4] = new imageObj("image2.jpg", 4, "fdsaha", "faewahe");
+slideimages[5] = new imageObj("image0.jpg", 5, "fdsaha", "faewahe");
+slideimages[6] = new imageObj("image2.jpg", 6, "fdsaha", "faewahe");
+slideimages[7] = new imageObj("image1.jpg", 7, "fdsaha", "faewahe");
+//function to pull info from img when clicked
+function getInfo(img) {
+    var name = img.src;
+    var alt = img.alt;
+    var id = img.id;
+    var desc = slideimages[id].desc;
 
-    document.getElementsByClassName("image-container").src = "image1.jpg"
-
-    function imageObj(src, id, alt, desc) {
-        this.src = src;
-        this.alt = alt;
-        this.id = id;
-        this.desc = desc;
-    }
-
-    var slideimages = [];
-    slideimages[0] = new imageObj("image0.jpg", 0, "This is an image of", "drawing of boobs");
-    //slideimages[0].src = "image0.jpg"
-    slideimages[1] = new imageObj("image1.jpg", 1, "This is an image of 2", "drawings of farts");
-    slideimages[2] = new imageObj("image2.jpg", 2, "Wowowowow", "drawings of turds");
+    console.log ("the alt is " + alt)
+    counter = id;
     
+    //make overlay visible
+    containerStyle.left = "0";
 
-    console.log(slideimages)
-
-
-    function getInfo(img) {
-
-        var name = img.src;
-        var alt = img.alt;
-        var id = img.id;
-        var desc = img.desc;
-        console.log(name);
-        console.log(alt);
-        console.log(id);
-        console.log(desc)
-
-        counter = id;
-        console.log(counter)
+    document.getElementById("slide-img-container").innerHTML = "<img src='" + name + "'><h1>" + alt + "</h1> <p>" + desc + "</p><button id='close'>exit</button>"
+    document.getElementById("close").onclick = function() {
+        close()
     }
+}
 
-    //document.getElementById("img-container").innerHTML = "<img onClick='getInfo(this)' src='" +  slideimages[2].src + "' alt= ' " + slideimages[2].alt + " '>";
+//to keep counter from surpassing the amount of images in slideImages array
+var elementCount = slideimages.length;
 
+//styling
+var m = document.getElementById("slide-container");
+var containerStyle = m.style;
 
-    //for loop that pushes all existing objects into array then call it going through array[#] using the step counting function
+//var c = document.getElementById("load-test-container").childNodes;
 
+//advance through slide show
+function close() {
+    
+    containerStyle.left = "-90000px"
+    console.log("working")
+}
 
+function forward() {
+    counter++;
+    console.log(counter);
+    if (counter >= elementCount) {
+        counter = 0;
+    }
+    // HTML
+    document.getElementById("slide-img-container").innerHTML = " ";
+    document.getElementById("slide-img-container").innerHTML = "<img src='" + slideimages[counter].src + "'><h1>" + slideimages[counter].alt + "</h1> <p>" + slideimages[counter].desc + "</p><button id='close'>exit</button>"
+    document.getElementById("close").onclick = function() {
+        close()
+    }
+}
 
-    var counter = 0
-
+function back() {
+    counter--
     console.log(counter)
-
-    document.getElementById("img-container").innerHTML = "<img onClick='getInfo(this)' id =' " + slideimages[counter].id + " ' src='" + slideimages[counter].src + "' alt= ' " + slideimages[counter].alt + " '>";
-
-    var elementCount = slideimages.length;
-
-    console.log(elementCount)
-
-    // function imgSelect() {
-    //     counter = document.getElementById
-    // }
-
-    function forward() {
-        counter++
-        console.log(counter)
-        if (counter >= elementCount) {
-            counter = 0
-        }
-        document.getElementById("img-container").innerHTML = " ";
-        document.getElementById("img-container").innerHTML = "<img onClick='getInfo(this)' src='" + slideimages[counter].src + "' alt= ' " + slideimages[counter].alt + " '>";
+    if (counter < 0) {
+        counter = elementCount - 1;
     }
-
-    function back() {
-        counter--
-        console.log(counter)
-        if (counter <= 0) {
-            counter = elementCount + 1
-        }
-        document.getElementById("img-container").innerHTML = " ";
-        document.getElementById("img-container").innerHTML = "<img onClick='getInfo(this)' src='" + slideimages[counter].src + "' alt= ' " + slideimages[counter].alt + " '>";
+    document.getElementById("slide-img-container").innerHTML = " ";
+    document.getElementById("slide-img-container").innerHTML = "<img src='" + slideimages[counter].src + "'><h1>" + slideimages[counter].alt + "</h1> <p>" + slideimages[counter].desc + "</p><button id='close'>exit</button>"
+    document.getElementById("close").onclick = function() {
+        close()
     }
+}
 
 
-    for (var i = 0; i < slideimages.length; i++) {
-        //document.getElementById("test-container").innerHTML = "<img onClick='getInfo(this)' src='" +  slideimages[i].src + "' alt= ' " + slideimages[i].alt + " ' width='100px'>";
-        $("#test-container").append("<img onClick='getInfo(this)' src='" + slideimages[i].src + "' alt= ' " + slideimages[i].alt + " ' width='100px'>")
-        // var e = document.createElement('img');
-        // var t = document.createTextNode("onClick='getInfo(this)' src='" + slideimages[i].src + "' alt= ' " + slideimages[i].alt + " ' width='100px'");
-        //var t = document.createTextNode("fafdsafdsfad fdsafewaf");
-        // e.appendChild(t);
-        // document.getElementById("test-container").appendChild(e)
+for (var i = 0; i < slideimages.length; i++) {
+    $("#test-container").append("<img onClick='getInfo(this)' id = '" + slideimages[i].id + "'src='" + slideimages[i].src + "' alt='" + slideimages[i].alt + "' width='175px'>");
+}
 
+// $("#slide-container").on("click", function() {
+//     $("#slide-container").css("left","-9000px")
+// });
 
-    }
-
-    // var e = document.createElement('img');
-    // var t = "onClick='getInfo(this)' src='" +  slideimages[i].src + "' alt= ' " + slideimages[i].alt + " ' width='100px'";
-
-    // e.appendChild(t);
-    // document.getElementById("test-container").appendChild(e)
-
-
-    // var para = document.createElement("P");
-    //     var t = document.createTextNode("This is a paragraph.");
-    //     para.appendChild(t);
-    //     document.getElementById("myDIV").appendChild(para);
