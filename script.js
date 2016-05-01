@@ -1,84 +1,73 @@
 //CARDS
-var deck = [{
-    key: "twoHearts",
-    num: 2,
-    suit: "heart"
-}, {
-    key: "threeHearts",
-    num: 3,
-    suite: "heart"
-}, {
-    key: "fourHearts",
-    num: 4,
-    suit: "heart"
-}, {
-    key: "fiveHearts",
-    num: 5,
-    suite: "heart"
-}, {
-    key: "sixHearts",
-    num: 6,
-    suit: "heart"
-}, {
-    key: "sevenHearts",
-    num: 7,
-    suite: "heart"
-}, {
-    key: "eightHearts",
-    num: 8,
-    suit: "heart"
-}, {
-    key: "nineHearts",
-    num: 9,
-    suit: "heart"
-}, {
-    key: "tenHearts",
-    num: 10,
-    suit: "heart"
-}, {
-    key: "jackHearts",
-    num: 11,
-    suite: "heart"
-}, {
-    key: "queenHearts",
-    num: 12,
-    suit: "heart"
-}, {
-    key: "kingHearts",
-    num: 13,
-    suite: "heart"
-}, {
-    key: "aceHearts",
-    num: 13,
-    suite: "heart"
-}, ];
-
 
 var yourHand = []
 var compHand = []
 
+var deck = [];
 
-function card() {
+function Card(num, suit) {
+    this.num = num;
+    this.suit = suit;
+}
+
+
+for(var i = 0; i < 52; i++) {
     var num = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-    this.value = num[Math.floor(Math.random() * num.length)];
+    var value = num[Math.floor(Math.random() * num.length)];
+    
     var type = ["Heart", "Diamond", "Spade", "Club"];
-    this.suit = type[Math.floor(Math.random() * type.length)];
+    var suit = type[Math.floor(Math.random() * type.length)];
     
+    deck[i] = new Card(value, suit)
     
+    //document.getElementById("app").innerHTML = "<p>Suit is " + deck[i].suit + " and it has a value of " + deck[i].num + "</p>"
+    //$("#app").append("<p>Suit is " + deck[i].suit + " and it has a value of " + deck[i].num + "</p>")
+    
+    deck.forEach(verify);
+    
+    function verify() {
+    for (var y = 0; y = deck.length; y++) {
+        if (deck[i].suit == deck[y].suit && deck[i].num == deck[y].num) {
+            console.log(deck[i] + "matches with" + deck[y])
+        }
+    }
+    }
 }
 
+console.log("lookin at " + deck[5].suit)
+
+console.log(deck)
+console.log(deck.length)
+
+// function num() {
+//     var num = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+//     var value = num[Math.floor(Math.random() * num.length)];
+//     //var numRes = this.value;
+//     return value;
+// }
+
+// function suit() {
+//     var type = ["Heart", "Diamond", "Spade", "Club"];
+//     var suit = type[Math.floor(Math.random() * type.length)];
+//     return suit;
+// };
 
 
-var i = 1;
-do {
-    var testDeck = [];
-    var yourCard = new card;
-    console.log(yourCard);
-    testDeck.push(yourCard);
-    i++ ;
+
+
+// var theTree = new Tree('Redwood');
+// console.log('theTree.constructor is ' + theTree.constructor);
+
+// var i = 1;
+// do {
+//     var testDeck = [];
+//     var yourCard = new card;
+//     console.log(yourCard);
+//     testDeck.push(yourCard);
+//     i++ ;
     
-}
-while (i < 5);
+// }
+// while (i < 5);
 
 
 
@@ -99,7 +88,7 @@ while (i < 5);
 
 // console.log(card1);
 
-console.log(testDeck);
+//console.log(testDeck);
 
 
 

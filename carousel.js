@@ -1,17 +1,17 @@
-console.log("yqy!")
+console.log("yqy!");
 
 
 // counter to keep track of what image should be displayed in slides how
-var counter = 0
-console.log(counter)
+var counter = 0;
+console.log(counter);
 
 //calling functions
 document.getElementById("back").onclick = function() {
-    back()
-}
+    back();
+};
 document.getElementById("forward").onclick = function() {
-    forward()
-}
+    forward();
+};
 
 
 //object
@@ -33,6 +33,8 @@ slideimages[5] = new imageObj("image0.jpg", 5, "fdsaha", "faewahe");
 slideimages[6] = new imageObj("image2.jpg", 6, "fdsaha", "faewahe");
 slideimages[7] = new imageObj("image1.jpg", 7, "fdsaha", "faewahe");
 //function to pull info from img when clicked
+
+console.log("lookin at " + slideimages[5])
 function getInfo(img) {
     var name = img.src;
     var alt = img.alt;
