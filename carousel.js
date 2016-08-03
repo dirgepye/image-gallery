@@ -1,4 +1,8 @@
-console.log("yqy!");
+var slideimages = [];
+
+
+
+
 
 
 // counter to keep track of what image should be displayed in slides how
@@ -7,9 +11,11 @@ console.log(counter);
 
 //calling functions
 document.getElementById("back").onclick = function() {
+    console.log("backward")
     back();
 };
 document.getElementById("forward").onclick = function() {
+    console.log("forward")
     forward();
 };
 
@@ -23,27 +29,45 @@ function imageObj(src, id, alt, desc) {
 }
 
 //images to go in slide
-var slideimages = [];
-slideimages[0] = new imageObj("image0.jpg", 0, "This is an image of", "drawing of boobs");
-slideimages[1] = new imageObj("image1.jpg", 1, "This is an image of 2", "drawings of farts");
-slideimages[2] = new imageObj("image2.jpg", 2, "Wowowowow", "drawings of turds");
-slideimages[3] = new imageObj("image1.jpg", 3, "fdsaha", "faewahe");
-slideimages[4] = new imageObj("image2.jpg", 4, "fdsaha", "faewahe");
-slideimages[5] = new imageObj("image0.jpg", 5, "fdsaha", "faewahe");
-slideimages[6] = new imageObj("image2.jpg", 6, "fdsaha", "faewahe");
-slideimages[7] = new imageObj("image1.jpg", 7, "fdsaha", "faewahe");
+
+// $.getJSON('stuf', function(result) {
+//     for (var i = 0; i < result.images.length; i++) {
+//         slideimages.push(new imageObj(result.images[i].src, result.images[i].id, result.images[i].alt, result.images[i].desc));
+//     }
+//     console.log(result)
+//     console.log(slideimages)
+    
+//     populateGallery();
+// });
+
+
+
+slideimages[0] = new imageObj("image0.jpg", 0, "This is image 1", "drawing of boobs");
+slideimages[1] = new imageObj("image1.jpg", 1, "This is image 2", "drawings of farts");
+slideimages[2] = new imageObj("image2.jpg", 2, "This is image 3", "drawings of turds");
+slideimages[3] = new imageObj("image1.jpg", 3, "This is image 4", "faewahe");
+slideimages[4] = new imageObj("image2.jpg", 4, "This is image 5", "faewahe");
+slideimages[5] = new imageObj("image0.jpg", 5, "This is image 6", "faewahe");
+slideimages[6] = new imageObj("image2.jpg", 6, "This is image 7", "faewahe");
+slideimages[7] = new imageObj("image1.jpg", 7, "This is image 8", "faewahe");
+
+populateGallery()
+
+//console.log(slideimages)
 //function to pull info from img when clicked
 
-console.log("lookin at " + slideimages[5])
+// console.log("lookin at " + slideimages[2])
+// console.log(slideimages)
+
 function getInfo(img) {
     var name = img.src;
     var alt = img.alt;
     var id = img.id;
     var desc = slideimages[id].desc;
 
-    console.log ("the alt is " + alt)
+    console.log("the alt is " + alt)
     counter = id;
-    
+
     //make overlay visible
     containerStyle.left = "0";
 
@@ -60,11 +84,9 @@ var elementCount = slideimages.length;
 var m = document.getElementById("slide-container");
 var containerStyle = m.style;
 
-//var c = document.getElementById("load-test-container").childNodes;
-
 //advance through slide show
 function close() {
-    
+
     containerStyle.left = "-90000px"
     console.log("working")
 }
@@ -96,12 +118,14 @@ function back() {
     }
 }
 
-
-for (var i = 0; i < slideimages.length; i++) {
-    $("#test-container").append("<img onClick='getInfo(this)' id = '" + slideimages[i].id + "'src='" + slideimages[i].src + "' alt='" + slideimages[i].alt + "' width='175px'>");
+function populateGallery() {
+    for (var i = 0; i < slideimages.length; i++) {
+        $("#test-container").append("<img onClick='getInfo(this)' id = '" + slideimages[i].id + "'src='" + slideimages[i].src + "' alt='" + slideimages[i].alt + "' width='175px'>");
+    }
 }
+
+
 
 // $("#slide-container").on("click", function() {
 //     $("#slide-container").css("left","-9000px")
 // });
-
