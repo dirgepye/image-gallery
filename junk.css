@@ -1,0 +1,362 @@
+@mixin flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex-row {
+    flex-direction: row;
+    -webkit-flex-direction: row
+}
+
+@mixin flex-column {
+    flex-direction: column;
+    -webkit-flex-direction: column
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    @include flex;
+    flex-direction: row;
+}
+
+
+$burgundy: #591311;
+$deep-green: #30383B;
+$blue: #82A4BD;
+$pale-blue: #B2BCC8;
+
+// FORM a
+
+$form-a-border: #646C75;
+$form-a-inner-border: #A4ADB0;
+$form-a-background: #DED9DC;
+$form-a-button-link: #16718C;
+$form-a-text: #0A2745;
+
+
+
+$form-b-border: #262525;
+$form-b-inner-border: #525252;
+$form-b-background: #E6DDBC;
+$form-b-button-link: #822626;
+$form-b-text: #262525;
+
+
+
+//FORM b
+
+$white: #ECECEE;
+$dark-blue: #4169E1;
+$light-blue: #283198;
+$light-red: #B5191D;
+$dark-red: #820805;
+
+
+// orange : #F38305
+// white: #DEDFD7
+// blue: #2B4F67
+// black: #080A00
+// gray blue: #445A6B
+
+.style {
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #bbb 3px;
+    padding: 10px;
+    width: 150px;
+    max-height: 46px;
+    transition: background-color 0.5s;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.style:hover {
+    background-color: #445A6B;
+    cursor: pointer;
+}
+
+.dash {
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #080A19;
+    width: 100vw;
+    height: 100vh;
+    color: #BBB;
+
+
+    .dash-content {
+    @include flex;
+    flex-direction: column;
+    width: 300px;
+        p {
+            text-align: justify;
+            margin: 10px 0;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 10px 0;
+        }
+    }
+}
+
+.display {
+    @include flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #445A6B;
+    width: 0vw;
+    height: 100vh;
+    overflow: scroll;
+    
+    p {
+        font-size: 60px;
+        width: 600px;
+        color: #3c4e5d;
+        font-weight: 600;
+    }
+}
+
+.display-container {
+    width: 400px;
+    margin: auto;
+}
+.cover {
+    background-color: #080A19;
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 10000;
+}
+
+.buttons {
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    width: 100%;
+}
+
+
+.form-a {
+    // background-color: $form-a-border;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form-a__basic {
+    font-family: 'PT Sans', sans-serif;
+    color: $form-a-text;
+    background-color: $form-a-background;
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid $form-a-border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+    width: 350px;
+    margin: 10px;
+    
+    h4 {
+        font-size: 23px;
+        border-bottom: 1px solid $form-a-inner-border;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .blah a {
+        
+        float: right;
+    }
+    
+    
+    form {
+    
+        border-bottom: 1px solid $form-a-inner-border;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        
+        // input {
+        // border: na;
+        // padding: 10px 0px;
+        // }
+    
+    }
+    
+   .form-a__field {
+       border: 1px solid $form-a-inner-border;
+       font-size: 14px;
+       margin: 6px 0px;
+       padding: 6px;
+       width: 100%;
+   }
+   
+//   .form-a__password {
+//       @extend .form-a__username;
+//   }
+   
+   .form-a__submit {
+       background-color: $form-a-button-link;
+       color: $form-a-text;
+       font-size: 20px;
+       padding: 4px;
+       width: 100%;
+       border: none;
+       
+   }
+   
+   a {
+       text-decoration: na;
+       color: $form-a-button-link;
+       
+   }
+}
+
+.style-buttons {
+    
+}
+
+.form-b {
+    background-color: #ddd;
+}
+
+.form-b {
+    // background-color: $dark-gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form-b__basic {
+    font-family: 'Share Tech Mono', ;
+    color: $dark-blue;
+    background-color: $white;
+    border: 4px solid $dark-blue;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+    width: 350px;
+    margin: 10px;
+    
+    h4 {
+        font-size: 23px;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    
+    .blah a {
+        
+        float: right;
+    }
+    
+    
+    form {
+    
+        
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        
+        // input {
+        // border: none;
+        // padding: 10px 0px;
+        // }
+    
+    }
+    
+    input[type=text] {
+       border: none;
+       background-color: $dark-blue;
+       border-bottom: 2px solid $light-blue;
+       border-right: 2px solid $light-blue;
+       color: $white;
+       font-size: 14px;
+       margin: 6px 0px;
+       padding: 6px;
+       width: 100%;
+       transition: ease-in-out, background-color .10s ease-in-out;
+       
+    }
+    
+    input[type=text]:focus {
+        outline:none;
+        background-color: $light-blue;
+        
+    }
+   
+    input[type=submit] {
+       background-color: $white;
+       border: 4px solid $dark-blue;
+       color: $dark-blue;
+       font-size: 20px;
+       padding: 4px;
+       width: 100%;
+       
+   }
+   
+   a {
+       text-decoration: underline;
+       color: red;
+       
+   }
+   
+
+}
+
+
+.form-b--signup{
+    
+    border: none;
+    border-bottom: 3px solid $dark-red;
+    border-right: 3px solid $dark-red;
+    background-color: $light-red;
+    color: $white;
+    
+    input[type=text]{
+        border: none;
+        background-color: $white;
+        border-bottom: 3px solid $dark-red;
+        border-right: 3px solid $dark-red;
+        color: $dark-red;
+    }
+    
+    input[type=submit]{
+        @extend input[type=text];
+    }
+    
+    input[type=text]:focus {
+    outline:none;
+    background-color: $white;
+        
+    }
+}
+
+
