@@ -32,23 +32,26 @@ function imageObj(src, id, alt, desc) {
 
 //img objects
 
-slideimages[0] = new imageObj("image0.jpg", 0, "This is image 1", "drawing of boobs");
-slideimages[1] = new imageObj("image1.jpg", 1, "This is image 2", "drawings of farts");
-slideimages[2] = new imageObj("image2.jpg", 2, "This is image 3", "drawings of turds");
-slideimages[3] = new imageObj("image1.jpg", 3, "This is image 4", "faewahe");
-slideimages[4] = new imageObj("image2.jpg", 4, "This is image 5", "faewahe");
-slideimages[5] = new imageObj("image0.jpg", 5, "This is image 6", "faewahe");
-slideimages[6] = new imageObj("image2.jpg", 6, "This is image 7", "faewahe");
-slideimages[7] = new imageObj("image1.jpg", 7, "This is image 8", "faewahe");
-slideimages[8] = new imageObj("image2.jpg", 8, "This is image 8", "faewahe");
-slideimages[9] = new imageObj("image1.jpg", 9, "This is image 8", "faewahe");
-slideimages[10] = new imageObj("image0.jpg", 10, "This is image 8", "faewahe");
-slideimages[11] = new imageObj("image2.jpg", 11, "This is image 8", "faewahe");
-slideimages[12] = new imageObj("image0.jpg", 12, "This is image 8", "faewahe");
-slideimages[13] = new imageObj("image1.jpg", 13, "This is image 8", "faewahe");
-slideimages[14] = new imageObj("image0.jpg", 14, "This is image 8", "faewahe");
-slideimages[15] = new imageObj("image2.jpg", 15, "This is image 8", "faewahe");
-slideimages[16] = new imageObj("image1.jpg", 16, "This is image 8", "faewahe");
+slideimages[0] = new imageObj("images/ted_spotlight.jpg", 0, "Ted Talk Illustrations", "This is one of the illustrations I was comissioned to make for a Ted Talk by War Crimes Lawyer turned Comedian, Jess Salomon. This illustration shows her learning a valuable lesson for any comedian; stand in the spotlight ");
+slideimages[1] = new imageObj("images/commission_comedy_poster.jpg", 1, "Comedy Abroad Poster", "A poster I was asked to do for one of the more popular stand-up comedy shows in Montreal. It was put together in photoshop, and the icons were made in Illustrator");
+slideimages[2] = new imageObj("images/sbc_lifes_work.jpg", 2, "Shawn's Bad Comics - Life's Work", "A comic from my own web-based comic strip, 'Shawn's Bad Comics'. Each issue is drawn by hand and then cleaned up using Photoshop");
+slideimages[3] = new imageObj("images/ted_feeling_awesome.jpg", 3, "Ted Talk Illustrations", "Another illustration for Jess Salomon's Ted Talk. This entry is meant to portray the feeling of joy/relief after having a string of good sets");
+slideimages[4] = new imageObj("images/other_self_portrait.jpg", 4, "Self Portrait", "A simple self portrait of myself made with Photoshop.");
+slideimages[5] = new imageObj("images/crit_plan_9.jpg", 5, "Criterion Collection - Plan 9 From Outer Space", "Anyone who loves film recognizes how great Criterion covers are. This is my own attempt at creating one for the campy cult classic, Plan 9 From Outer Space");
+slideimages[6] = new imageObj("images/ted_2046.jpg", 6, "Ted Talk Illustration", "Here Jess imagines what doing comedy in the year 2036 might look like");
+slideimages[7] = new imageObj("images/other_potemkin.jpg", 7, "Potemkin Silk Screen", "Illustration for a silk screening depicting one of the more famous scenes in film history from the film 'Battleship Potemkin");
+slideimages[8] = new imageObj("images/other_new_world_color.jpg", 8, "A New World of Color", "A flyer I was commissioned to do for a panel discussion on color in film. Unfortunately the event didn't end up happening :(");
+slideimages[9] = new imageObj("images/sbc_stupid_cats.jpg", 9, "Shawn's Bad Comics - Stupid Cats", "The very first edition of 'Shawn's Bad Comics'!");
+slideimages[10] = new imageObj("http://placekitten.com/200/300", 10, "This is image 8", "faewahe");
+slideimages[11] = new imageObj("images/ted_owl.jpg", 11, "Ted Talk Illustrations", "This illustration depicts Jess fully embracing her new night owl lifestyle that comes with working in stand up comedy.");
+slideimages[12] = new imageObj("images/other_silhouette.jpg", 12, "Silhouette", "A quick photoshop illustration for a friend's personal project");
+slideimages[13] = new imageObj("images/ted_theater_show.jpg", 13, "Ted Talk Illustrations", "An illustration of Jess at her first theater performance. Unfortunately she still couldn't get her parents quality seats.");
+slideimages[14] = new imageObj("http://placekitten.com/250/200", 14, "This is image 8", "faewahe");
+slideimages[15] = new imageObj("images/crit_bwr.jpg", 15, "Criterion Cover - Blue White Red Trilogy","Here is another attempt to design a Criterion style cover. This would be the outside of a box set for the Blue White Red trilogy.");
+slideimages[16] = new imageObj("images/crit_blue_inlay.jpg", 16, "Criterion Cover - Blue", "This would be the inlay cover for 'Blue'");
+slideimages[17] = new imageObj("images/crit_white_inlay.jpg", 17, "Criterion Cover - White", "This would be the inlay cover for 'White'");
+slideimages[18] = new imageObj("images/crit_red_inlay.jpg", 18, "Criterion Cover - Red", "This would be the inlay cover for 'Red'");
+slideimages[19] = new imageObj("http://placekitten.com/300/500", 19, "This is image 8", "faewahe");
 
 populateGallery();
 
@@ -88,7 +91,10 @@ function getInfo(img) {
     slideImg.innerHTML = "<img src='" + name + "'>";
     slideImgInfo.innerHTML = "<h1>" + alt + "</h1> <p>" + desc + "</p>";
     document.getElementById("slide-container").onclick = function(){
-        forward();
+        //forward();
+        // input type="button" onclick="location.href='http://google.com';" value="Go to Google"
+        
+        location.href=name;
     };
 }
 

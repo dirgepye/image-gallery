@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body id="slideshow-body">
     <h1>Illustrations and Graphic Design</h1>
-    
+
 
 
 
@@ -18,17 +19,22 @@
         <span class="closeX">X</span>
 
         <div onClick="forward()" id="slide-container">
+            <span class="enlarge">click to enlarge</span>
             <img src="arrow.png" class="scroll" id="back">
-            <div id="slide-img-container">
-                <div id="slide-img">
+            <div class="slide-column">
+                <div id="slide-img-container">
+                    <div id="slide-img">
+
+                    </div>
+
+                </div>
+                <div id="slide-img-info">
 
                 </div>
             </div>
-            <div id="slide-img-info">
 
-            </div>
             <img src="arrow.png" class="scroll" id="forward">
-            
+
         </div>
 
     </div>
