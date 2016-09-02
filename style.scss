@@ -25,7 +25,8 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    color: #fafafa;
+    color: #3a3a3a;
+    
 }
 
 html {
@@ -35,6 +36,7 @@ html {
 body {
     @include flex;
     flex-direction: row;
+    
 }
 
 // Carousel 
@@ -139,6 +141,7 @@ body {
         color: #eaeaea;
         h1 {
             font-family: 'Droid Sans Mono', monospace;
+            color: #fafafa;
         }
     }
 }

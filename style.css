@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  color: #fafafa; }
+  color: #3a3a3a; }
 
 html {
   box-sizing: border-box; }
@@ -91,7 +91,8 @@ body {
     padding: 15px;
     color: #eaeaea; }
     #slide-container #slide-img-info h1 {
-      font-family: 'Droid Sans Mono', monospace; }
+      font-family: 'Droid Sans Mono', monospace;
+      color: #fafafa; }
 
 button {
   outline: none;
